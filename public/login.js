@@ -1,4 +1,4 @@
-var baseStats = "1;"
+var baseStats = "1;10;50";
 
 function registerResponse () {
 	alert(this.responseText);

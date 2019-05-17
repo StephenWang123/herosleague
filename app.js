@@ -11,7 +11,6 @@ var dbFileName = "users.db";
 var db = new sqlite3.Database(dbFileName); 
 
 
-
 /*
  *  This is our server's function handler. The request obj
  *  comes from the browser to the server, and the response
@@ -77,9 +76,6 @@ function handler(request, response) {
 
 			});
 			
-
-
-
 			
 			/*
 			db.get("SELECT tags FROM photoTags WHERE fileName = '" + src + "'", function (err, rowData) {
