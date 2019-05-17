@@ -1,0 +1,25 @@
+{
+  "name": "herosleague",
+  "version": "1.0.0",
+  "description": "online rpg",
+  "main": "createUsers.js",
+  "dependencies": {
+    "ip": "^1.1.5",
+    "node-static": "^0.7.11",
+    "sqlite3": "^4.0.8"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StephenWang123/herosleague.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/StephenWang123/herosleague/issues"
+  },
+  "homepage": "https://github.com/StephenWang123/herosleague#readme"
+}
