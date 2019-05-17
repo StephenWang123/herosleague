@@ -100,7 +100,7 @@ function handler(request, response) {
 
 		else {
 
-			file.serve(request, response, function (e, res) {
+			file.serveFile('/login.html', 200, {}, request, response, function (e, res) {
 	        if (e && (e.status === 404)) { // If the file wasn't found
 	            file.serveFile('/error.html', 404, {}, request, response); // Page not found!
 	        }
