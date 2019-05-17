@@ -77,34 +77,17 @@ function handler(request, response) {
 			});
 			
 			
-			/*
-			db.get("SELECT tags FROM photoTags WHERE fileName = '" + src + "'", function (err, rowData) {
-	        	if (err) { console.log("thiserror: ",err); }
-	        	else {
-				var tags = rowData.tags;
-				console.log("OLD TAGS: " + tags);
-				tags = tags.replace(tag + ",", '');
-				tags = tags.replace("," + tag, '');
-				cmd = cmd.concat(tags + "' WHERE fileName = '" + src + "'");
-				db.run(cmd, errorCallback);
-			}
-			
-        	
-			});
-			*/
 		}
 
 		else {
 
-			file.serveFile('/login.html', 200, {}, request, response);
-
-			/*file.serveFile('/login.html', 200, {}, request, response, function (e, res) {
-		        if (e && (e.status === 404)) { // If the file wasn't found
-		            file.serveFile('/error.html', 404, {}, request, response); // Page not found!
-		        }
-	        });*/
-
-		}	
+			
+	            file.serve(request, response, function (e, res) {
+	            if (e && (e.status === 404)) { // If the file wasn't found
+	                file.serveFile('/login.html', 404, {}, request, response); // Serve default page
+	            }
+            	});
+        }	
 	
 
     }).resume();
