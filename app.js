@@ -10,6 +10,11 @@ var ip = require('ip');
 var dbFileName = "users.db"; 
 var db = new sqlite3.Database(dbFileName); 
 
+function callback(user, pass){
+
+
+
+}
 
 /*
  *  This is our server's function handler. The request obj
@@ -26,26 +31,28 @@ function handler(request, response) {
 
     	if (url.substring(0, 6) == "login=") { // User login code
 
+    		console.log("someone is logging in");
+
 			response.writeHead(200, {"Content-Type": "text/html"});
 			url = url.substring(6, url.length);
-			srcAndTag = url.split("%20");
-			src = srcAndTag[0];
-			tag = srcAndTag[1];
-			console.log("SRC: " + src);
-			console.log("TAG: " + tag);
-			cmd = "UPDATE photoTags SET Tags = '";
-			db.get("SELECT tags FROM photoTags WHERE fileName = '" + src + "'", function (err, rowData) {
-	        	if (err) { console.log("thiserror: ",err); }
-	        	else {
-				var tags = rowData.tags;
-				console.log("OLD TAGS: " + tags);
-				tags = tags.replace(tag + ",", '');
-				tags = tags.replace("," + tag, '');
-				cmd = cmd.concat(tags + "' WHERE fileName = '" + src + "'");
-				db.run(cmd, errorCallback);
-			}
-		
-        	
+			usrAndPass = url.split("%20");
+			usr = usrAndPass[0];
+			pass = usrAndPass[1];
+			console.log("USER: " + usr);
+			console.log("PASS: " + pass);
+			
+			db.get("SELECT * FROM userPass WHERE username = '" + usr + "' AND password = '" + pass + "'", function (err, row) {
+
+				if (row == undefined) { // Username/password combination doesn't exist in database
+					response.write("Invalid username/password combination");
+					response.end();
+				}
+				else {
+					console.log("Login info correct:");
+					response.write(row.stats);
+					response.end();
+				}
+
 			});
 		
 		}
@@ -59,9 +66,11 @@ function handler(request, response) {
 			usrAndPass = url.split("%20");
 			usr = usrAndPass[0];
 			pass = usrAndPass[1];
+			stats = usrAndPass[2];
 			console.log("USER: " + usr);
 			console.log("PASS: " + pass);
-			cmd = "INSERT INTO userPass (username, password) VALUES ('" + usr + "','" + pass + "')";
+			console.log("BASESTATS: " + stats);
+			cmd = "INSERT INTO userPass (username, password, stats) VALUES ('" + usr + "','" + pass + "','" + stats +"')";
 			db.get("SELECT 1 FROM userPass WHERE username = '" + usr + "'", function (err, row) {
 
 				if (row != undefined) { // Username already exists in database

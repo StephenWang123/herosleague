@@ -1,15 +1,29 @@
-var baseStats = "1;10;50";
+var baseStats = ";4;100;1;1;1;1;None;None;None;LeatherArmor;WoodenDagger";
+var loadedStats = "";
+// Level;Gold;Melee;Ranged;Magic;Defense;Class;EquipArmor;EquipWeapon;Inventory;
 
 function registerResponse () {
 	alert(this.responseText);
 } 
 
 function loginResponse () {
-	photos = JSON.parse(this.responseText);
-	reactContainer = document.getElementById("react");
-	ReactDOM.render(React.createElement(App),reactContainer);
-
+	alert(this.responseText);
+	loadedStats = this.responseText;
+	if (this.responseText != "Invalid username/password combination"){
+		localStorage.setItem('userData', this.responseText);
+		window.location.href = "/main.html";
+	}
 } 
+
+function loadStats(){
+	//alert(localStorage.getItem('userData'));
+	var vals = localStorage.getItem('userData').split(";");
+	document.getElementById("userVal").innerHTML = vals[0];
+	document.getElementById("levelVal").innerHTML = vals[1];
+	document.getElementById("goldVal").innerHTML = vals[2];
+	document.getElementById("classVal").innerHTML = vals[7];
+
+}
 
 // Called when the user clicks login
 function login() {
@@ -58,8 +72,9 @@ function register() {
 		return;
 	}
 
+	baseStats = user + baseStats;
 
-    var url = "register=" + user + " " + pass;
+    var url = "register=" + user + " " + pass + " " + baseStats;
 
     var oReq = new XMLHttpRequest();
 
