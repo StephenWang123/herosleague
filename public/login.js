@@ -21,7 +21,15 @@ function loadStats(){
 	document.getElementById("userVal").innerHTML = vals[0];
 	document.getElementById("levelVal").innerHTML = vals[1];
 	document.getElementById("goldVal").innerHTML = vals[2];
+
+	document.getElementById("meleeVal").innerHTML = vals[3];
+	document.getElementById("rangedVal").innerHTML = vals[4];
+	document.getElementById("magicVal").innerHTML = vals[5];
+	document.getElementById("defenseVal").innerHTML = vals[6];
+
 	document.getElementById("classVal").innerHTML = vals[7];
+	document.getElementById("armorVal").innerHTML = vals[8];
+	document.getElementById("weaponVal").innerHTML = vals[9];
 
 }
 

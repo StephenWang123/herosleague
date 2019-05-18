@@ -1,0 +1,9 @@
+#userInfo{
+	display: flex;
+	flex-direction: column;
+}
+
+.stat{
+	display: flex;
+	flex-direction: row;
+}

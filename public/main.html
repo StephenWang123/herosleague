@@ -4,7 +4,7 @@
 <title>HerosLeague</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
-<link rel="stylesheet" type="text/css" href="login.css">
+<link rel="stylesheet" type="text/css" href="main.css">
 </head>
 
 <body onload="loadStats()">
@@ -15,20 +15,71 @@
 
 <h2 id="loginTitle">HerosLeague</h2>
 
-<div id="userPass">
+<div id="userInfo">
 
-<text>Username</text>
+<div class="stat">
+<text>Player: </text>
 <text id="userVal">stuff</text>
+</div>
 
-<text>Gold</text>
+<div class="stat">
+<text>Gold: </text>
 <text id="goldVal">stuff</text>
+</div>
 
-<text>Level</text>
+<div class="stat">
+<text>Level: </text>
 <text id="levelVal">stuff</text>
+</div>
 
-<text>Class</text>
+<div class="stat">
+<text>Class: </text>
 <text id="classVal">stuff</text>
+</div>
 
+
+<p>Stats:</p>
+
+<div class="stat">
+<text>Melee: </text>
+<text id="meleeVal">stuff</text>
+</div>
+
+<div class="stat">
+<text>Ranged: </text>
+<text id="rangedVal">stuff</text>
+</div>
+
+<div class="stat">
+<text>Magic: </text>
+<text id="magicVal">stuff</text>
+</div>
+
+<div class="stat">
+<text>Defense: </text>
+<text id="defenseVal">stuff</text>
+</div>
+
+
+
+<p>Equipment:</p>
+
+<div class="stat">
+<text>Armor: </text>
+<text id="armorVal">stuff</text>
+</div>
+
+<div class="stat">
+<text>Weapon: </text>
+<text id="weaponVal">stuff</text>
+</div>
+
+
+
+
+<button onclick="inventory()">View Inventory</button>
+<button onclick="shop()">Visit Shop</button>
+<button onclick="fight()">Fight Monsters</button>
 
 
 </div>
