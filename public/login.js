@@ -2,8 +2,19 @@ var baseStats = ";4;100;1;1;1;1;None;None;None;LeatherArmor;WoodenDagger";
 var loadedStats = "";
 // Level;Gold;Melee;Ranged;Magic;Defense;Class;EquipArmor;EquipWeapon;Inventory;
 
+function goToRegister(){
+	window.location.href = "/register.html";
+}
+
+function hidePass(){
+	document.getElementById
+}
+
 function registerResponse () {
 	alert(this.responseText);
+	if (this.responseText == "Registration successful."){
+		window.location.href = "/login.html";
+	}
 } 
 
 function loginResponse () {
