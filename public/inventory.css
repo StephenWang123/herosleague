@@ -1,0 +1,19 @@
+#equipment{
+	display: flex;
+	flex-direction: column;
+}
+
+.equipmentSlot{
+	display: flex;
+	flex-direction: row;
+}
+
+#inventory{
+	display: flex;
+	flex-direction: column;
+}
+
+.inventorySlot{
+	display: flex;
+	flex-direction: row;
+}

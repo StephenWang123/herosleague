@@ -1,4 +1,6 @@
-var baseStats = ";4;100;1;1;1;1;None;None;None;LeatherArmor;WoodenDagger";
+var baseStats = {"player":"stuff","level":4,"gold":100,"melee":1,"ranged":1,"magic":1,"defense":1,"classType":"None","armor":"None","weapon":"None","inventory":["Leather Armor","Wooden Dagger"]};
+
+
 var loadedStats = "";
 // Level;Gold;Melee;Ranged;Magic;Defense;Class;EquipArmor;EquipWeapon;Inventory;
 
@@ -6,9 +8,6 @@ function goToRegister(){
 	window.location.href = "/register.html";
 }
 
-function hidePass(){
-	document.getElementById
-}
 
 function registerResponse () {
 	alert(this.responseText);
@@ -18,29 +17,29 @@ function registerResponse () {
 } 
 
 function loginResponse () {
-	alert(this.responseText);
-	loadedStats = this.responseText;
-	if (this.responseText != "Invalid username/password combination"){
-		localStorage.setItem('userData', this.responseText);
+	loadedStats = decodeURIComponent(this.responseText);
+	alert(loadedStats);
+	if (loadedStats != "Invalid username/password combination"){
+		localStorage.setItem('userData', loadedStats);
 		window.location.href = "/main.html";
 	}
 } 
 
 function loadStats(){
-	//alert(localStorage.getItem('userData'));
-	var vals = localStorage.getItem('userData').split(";");
-	document.getElementById("userVal").innerHTML = vals[0];
-	document.getElementById("levelVal").innerHTML = vals[1];
-	document.getElementById("goldVal").innerHTML = vals[2];
 
-	document.getElementById("meleeVal").innerHTML = vals[3];
-	document.getElementById("rangedVal").innerHTML = vals[4];
-	document.getElementById("magicVal").innerHTML = vals[5];
-	document.getElementById("defenseVal").innerHTML = vals[6];
+	var vals = JSON.parse(localStorage.getItem('userData'));
+	document.getElementById("userVal").innerHTML = vals.player;
+	document.getElementById("levelVal").innerHTML = vals.level;
+	document.getElementById("goldVal").innerHTML = vals.gold;
 
-	document.getElementById("classVal").innerHTML = vals[7];
-	document.getElementById("armorVal").innerHTML = vals[8];
-	document.getElementById("weaponVal").innerHTML = vals[9];
+	document.getElementById("meleeVal").innerHTML = vals.melee;
+	document.getElementById("rangedVal").innerHTML = vals.ranged;
+	document.getElementById("magicVal").innerHTML = vals.magic;
+	document.getElementById("defenseVal").innerHTML = vals.defense;
+
+	document.getElementById("classVal").innerHTML = vals.classType;
+	document.getElementById("armorVal").innerHTML = vals.armor;
+	document.getElementById("weaponVal").innerHTML = vals.weapon;
 
 }
 
@@ -91,9 +90,10 @@ function register() {
 		return;
 	}
 
-	baseStats = user + baseStats;
+	baseStats.player = user;
 
-    var url = "register=" + user + " " + pass + " " + baseStats;
+
+    var url = "register=" + user + " " + pass + " " + JSON.stringify(baseStats);
 
     var oReq = new XMLHttpRequest();
 
