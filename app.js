@@ -69,7 +69,6 @@ function handler(request, response) {
 
 			usrAndPass.push(arr.slice(2).join(' '));
 
-			//usrAndPass = url.split("%20");
 			usr = usrAndPass[0];
 			pass = usrAndPass[1];
 			stats = usrAndPass[2];
@@ -92,6 +91,29 @@ function handler(request, response) {
 			});
 			
 			
+		}
+
+		else if (url.substring(0, 5) == "save=") { // save progress
+			console.log("saving progress");
+			response.writeHead(200, {"Content-Type": "text/html"});
+
+			url = url.substring(5, url.length);
+
+			arr = url.split('%20'),
+    		usrAndVals = arr.slice(0, 1);
+
+			usrAndVals.push(arr.slice(1).join(' '));
+			console.log("USER: " + usrAndVals[0]);
+			console.log("CURRENT STATS: " + usrAndVals[1]);
+			cmd = "UPDATE userPass SET stats = '" + usrAndVals[1] + "' WHERE username = '" + usrAndVals[0] + "'";
+
+			db.run(cmd, errorCallback);
+			response.write("Saved progress.");
+			response.end();
+
+
+
+
 		}
 
 		else {

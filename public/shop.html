@@ -4,19 +4,100 @@
 <title>HerosLeague</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
-<link rel="stylesheet" type="text/css" href="inventory.css">
+<link rel="stylesheet" type="text/css" href="shop.css">
 </head>
 
-<body onload="loadStats()">
+<body onload="loadShop()">
 
 
 <main>
-<div id="query">
 
 <h2 id="loginTitle">HerosLeague</h2>
 
-<div id="userInfo">
+<h3 id="goldTitle">Gold:</h3>
+<h3 id="goldAmount">goldStuff</h3>
 
+
+<div id="MainScreen">
+
+
+<div id="Shop">
+
+<h2 id="shopTitle">Shop</h2>
+
+<div class="shopItem">
+<text id="shopItem1">Leather Armor</text>
+<text id="shopItemVal1">10</text>
+<button id="buy1" onclick="buy1()">Buy</button>
+</div>
+
+<div class="shopItem">
+<text id="shopItem2">Wooden Dagger</text>
+<text id="shopItemVal2">10</text>
+<button id="buy2" onclick="buy2()">Buy</button>
+</div>
+
+<div class="shopItem">
+<text id="shopItem3">Knight Armor</text>
+<text id="shopItemVal3">100</text>
+<button id="buy3" onclick="buy3()">Buy</button>
+</div>
+
+<div class="shopItem">
+<text id="shopItem4">Knight Sword</text>
+<text id="shopItemVal4">150</text>
+<button id="buy4" onclick="buy4()">Buy</button>
+</div>
+
+
+
+</div>
+
+
+<div id="Inventory">
+
+<h2 id="inventoryTitle">Inventory</h2>
+
+<div class="inventorySlot">
+<text id="slotName1">empty</text>
+<button id="button1" onclick="slotSell1()">Sell</button>
+</div>
+<div class="inventorySlot">
+<text id="slotName2">empty</text>
+<button id="button2" onclick="slotSell2()">Sell</button>
+</div>
+<div class="inventorySlot">
+<text id="slotName3">empty</text>
+<button id="button3" onclick="slotSell3()">Sell</button>
+</div>
+<div class="inventorySlot">
+<text id="slotName4">empty</text>
+<button id="button4" onclick="slotSell4()">Sell</button>
+</div>
+<div class="inventorySlot">
+<text id="slotName5">empty</text>
+<button id="button5" onclick="slotSell5()">Sell</button>
+</div>
+<div class="inventorySlot">
+<text id="slotName6">empty</text>
+<button id="button6" onclick="slotSell6()">Sell</button>
+</div>
+<div class="inventorySlot">
+<text id="slotName7">empty</text>
+<button id="button7" onclick="slotSell7()">Sell</button>
+</div>
+<div class="inventorySlot">
+<text id="slotName8">empty</text>
+<button id="button8" onclick="slotSell8()">Sell</button>
+</div>
+<div class="inventorySlot">
+<text id="slotName9">empty</text>
+<button id="button9" onclick="slotSell9()">Sell</button>
+</div>
+<div class="inventorySlot">
+<text id="slotName10">empty</text>
+<button id="button10" onclick="slotSell10()">Sell</button>
+</div>
 
 
 </div>
@@ -31,7 +112,7 @@
 
 <!-- The Javascript for this page -->
 
-<script src="inventory.js"></script>
+<script src="shop.js"></script>
 
 
 

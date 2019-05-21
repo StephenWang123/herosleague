@@ -27,6 +27,8 @@ function loginResponse () {
 
 function loadStats(){
 
+	save();
+
 	var vals = JSON.parse(localStorage.getItem('userData'));
 	document.getElementById("userVal").innerHTML = vals.player;
 	document.getElementById("levelVal").innerHTML = vals.level;

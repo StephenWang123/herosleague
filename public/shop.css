@@ -1,0 +1,20 @@
+#MainScreen{
+	display: flex;
+	flex-direction: row;
+}
+
+#Shop{
+	display: flex;
+	flex-direction: column;
+}
+
+#Inventory{
+	display: flex;
+	flex-direction: column;
+	padding-left: 30px;
+}
+
+.shopItem{
+	display: flex;
+	flex-direction: row;
+}
