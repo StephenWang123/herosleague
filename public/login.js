@@ -1,4 +1,4 @@
-var baseStats = {"player":"stuff","level":4,"gold":100,"melee":1,"ranged":1,"magic":1,"defense":1,"classType":"None","armor":"None","weapon":"None","inventory":["Leather Armor","Wooden Dagger"]};
+var baseStats = {"player":"stuff","level":4,"gold":100,"melee":1,"ranged":1,"magic":1,"defense":1,"classType":"None","armor":{"tag":"empty","myType":"armor"},"weapon":{"tag":"empty","myType":"weapon"},"inventory":[{"tag":"Leather Armor","myType":"armor"},{"tag":"Wooden Dagger","myType":"weapon"}]};
 
 
 var loadedStats = "";
@@ -38,8 +38,8 @@ function loadStats(){
 	document.getElementById("defenseVal").innerHTML = vals.defense;
 
 	document.getElementById("classVal").innerHTML = vals.classType;
-	document.getElementById("armorVal").innerHTML = vals.armor;
-	document.getElementById("weaponVal").innerHTML = vals.weapon;
+	document.getElementById("armorVal").innerHTML = vals.armor.tag;
+	document.getElementById("weaponVal").innerHTML = vals.weapon.tag;
 
 }
 

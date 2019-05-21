@@ -63,7 +63,13 @@ function handler(request, response) {
 
 			response.writeHead(200, {"Content-Type": "text/html"});
 			url = url.substring(9, url.length);
-			usrAndPass = url.split("%20");
+
+			arr = url.split('%20'),
+    		usrAndPass = arr.slice(0, 2);
+
+			usrAndPass.push(arr.slice(2).join(' '));
+
+			//usrAndPass = url.split("%20");
 			usr = usrAndPass[0];
 			pass = usrAndPass[1];
 			stats = usrAndPass[2];
