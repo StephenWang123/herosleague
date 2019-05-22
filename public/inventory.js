@@ -4,6 +4,7 @@ var emptyWeapon = {"tag":"empty","myType":"weapon"};
 
 
 function loadInventory(){
+	save();
 	var slotName = "slotName";
 	vals = JSON.parse(localStorage.getItem('userData'));
 
@@ -31,6 +32,35 @@ function loadInventory(){
 	}
 
 
+}
+
+function armorUnequip(){
+	if (vals.inventory.length == 10){
+		alert("Inventory full!");
+		return;
+	}
+	else{
+		vals.inventory.push(vals.armor);
+		vals.armor = emptyArmor;
+	}
+
+	localStorage.setItem('userData', JSON.stringify(vals));
+	window.location.href = "/inventory.html";
+
+}
+
+function weaponUnequip(){
+	if (vals.inventory.length == 10){
+		alert("Inventory full!");
+		return;
+	}
+	else{
+		vals.inventory.push(vals.weapon);
+		vals.weapon = emptyWeapon;
+	}
+	
+	localStorage.setItem('userData', JSON.stringify(vals));
+	window.location.href = "/inventory.html";
 }
 
 function slot1Equip(){
@@ -92,7 +122,6 @@ function slot3Equip(){
 		temp = vals.armor;
 		vals.armor = vals.inventory[2];
 		vals.inventory.splice(2, 1);
-		alert("This is left in inventory: " + vals.inventory[2].tag);
 		if (temp.tag != "empty"){
 			vals.inventory.push(temp);
 		}
@@ -112,29 +141,170 @@ function slot3Equip(){
 }
 
 function slot4Equip(){
-	
+	var temp;
+	if (vals.inventory[3].myType == "armor"){
+		temp = vals.armor;
+		vals.armor = vals.inventory[3];
+		vals.inventory.splice(3, 1);
+		if (temp.tag != "empty"){
+			vals.inventory.push(temp);
+		}
+
+	}
+	else {
+		temp = vals.weapon;
+		vals.weapon = vals.inventory[3];
+		vals.inventory.splice(3, 1);
+		if (temp.tag != "empty"){
+			vals.inventory.push(temp);
+		}
+	}
+
+	localStorage.setItem('userData', JSON.stringify(vals));
+	window.location.href = "/inventory.html";
+
 }
 
 function slot5Equip(){
-	
+	var temp;
+	if (vals.inventory[4].myType == "armor"){
+		temp = vals.armor;
+		vals.armor = vals.inventory[4];
+		vals.inventory.splice(4, 1);
+		if (temp.tag != "empty"){
+			vals.inventory.push(temp);
+		}
+
+	}
+	else {
+		temp = vals.weapon;
+		vals.weapon = vals.inventory[4];
+		vals.inventory.splice(4, 1);
+		if (temp.tag != "empty"){
+			vals.inventory.push(temp);
+		}
+	}
+
+	localStorage.setItem('userData', JSON.stringify(vals));
+	window.location.href = "/inventory.html";
 }
 
 function slot6Equip(){
-	
+	var temp;
+	if (vals.inventory[5].myType == "armor"){
+		temp = vals.armor;
+		vals.armor = vals.inventory[5];
+		vals.inventory.splice(5, 1);
+		if (temp.tag != "empty"){
+			vals.inventory.push(temp);
+		}
+
+	}
+	else {
+		temp = vals.weapon;
+		vals.weapon = vals.inventory[5];
+		vals.inventory.splice(5, 1);
+		if (temp.tag != "empty"){
+			vals.inventory.push(temp);
+		}
+	}
+
+	localStorage.setItem('userData', JSON.stringify(vals));
+	window.location.href = "/inventory.html";
 }
 
 function slot7Equip(){
-	
+	var temp;
+	if (vals.inventory[6].myType == "armor"){
+		temp = vals.armor;
+		vals.armor = vals.inventory[6];
+		vals.inventory.splice(6, 1);
+		if (temp.tag != "empty"){
+			vals.inventory.push(temp);
+		}
+
+	}
+	else {
+		temp = vals.weapon;
+		vals.weapon = vals.inventory[6];
+		vals.inventory.splice(6, 1);
+		if (temp.tag != "empty"){
+			vals.inventory.push(temp);
+		}
+	}
+
+	localStorage.setItem('userData', JSON.stringify(vals));
+	window.location.href = "/inventory.html";
 }
 
 function slot8Equip(){
-	
+	var temp;
+	if (vals.inventory[7].myType == "armor"){
+		temp = vals.armor;
+		vals.armor = vals.inventory[7];
+		vals.inventory.splice(7, 1);
+		if (temp.tag != "empty"){
+			vals.inventory.push(temp);
+		}
+
+	}
+	else {
+		temp = vals.weapon;
+		vals.weapon = vals.inventory[7];
+		vals.inventory.splice(7, 1);
+		if (temp.tag != "empty"){
+			vals.inventory.push(temp);
+		}
+	}
+
+	localStorage.setItem('userData', JSON.stringify(vals));
+	window.location.href = "/inventory.html";
 }
 
 function slot9Equip(){
-	
+	var temp;
+	if (vals.inventory[8].myType == "armor"){
+		temp = vals.armor;
+		vals.armor = vals.inventory[8];
+		vals.inventory.splice(8, 1);
+		if (temp.tag != "empty"){
+			vals.inventory.push(temp);
+		}
+
+	}
+	else {
+		temp = vals.weapon;
+		vals.weapon = vals.inventory[8];
+		vals.inventory.splice(8, 1);
+		if (temp.tag != "empty"){
+			vals.inventory.push(temp);
+		}
+	}
+
+	localStorage.setItem('userData', JSON.stringify(vals));
+	window.location.href = "/inventory.html";
 }
 
 function slot10Equip(){
-	
+	var temp;
+	if (vals.inventory[9].myType == "armor"){
+		temp = vals.armor;
+		vals.armor = vals.inventory[9];
+		vals.inventory.splice(9, 1);
+		if (temp.tag != "empty"){
+			vals.inventory.push(temp);
+		}
+
+	}
+	else {
+		temp = vals.weapon;
+		vals.weapon = vals.inventory[9];
+		vals.inventory.splice(9, 1);
+		if (temp.tag != "empty"){
+			vals.inventory.push(temp);
+		}
+	}
+
+	localStorage.setItem('userData', JSON.stringify(vals));
+	window.location.href = "/inventory.html";
 }

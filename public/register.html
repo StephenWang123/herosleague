@@ -4,6 +4,10 @@
 <title>HerosLeague</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
+<link rel="stylesheet" type="text/css" href="login.css">
+<link rel="stylesheet" type="text/css" href="screen.css">
+
+
 </head>
 
 <body>
@@ -11,20 +15,32 @@
 
 <main>
 
+<div id="mainPage">
+
+
 <h2 id="loginTitle">HerosLeague</h2>
 
-<div id="userPass">
 
-<text>Username</text>
-<input id="user"> 
-<text>Password</text>
-<input id="pass"> 
-<button onclick="register()">Register</button>
+<div id="loginSection">
+
+<div id="textSection">
+<text id="userText">Username:</text>
+<text id="passText">Password:</text>
+<text id="confirmText">Confirm Password:</text>
+</div>
+
+<div id="inputSection">
+<input id="userBox"> 
+<input type="password" id="passBox"> 
+<input type="password" id="confirmBox">
+</div>
 
 </div>
 
+<button id="register" onclick="register()">Register</button>
 
 
+</div>
 
 
 </main>

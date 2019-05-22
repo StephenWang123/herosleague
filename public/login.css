@@ -1,0 +1,103 @@
+#loginSection{
+	display: flex;
+	flex-direction: row;
+}
+
+
+/* TEXT SECTION */
+
+#textSection{
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	height: 80px;
+}
+
+
+#userText{
+	font-size: 22px;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+	margin-bottom: 5px;
+}
+
+#passText{
+	font-size: 22px;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+	margin-bottom: 5px;
+}
+
+#confirmText{
+	font-size: 22px;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+
+}
+
+
+/* INPUT SECTION */
+
+#inputSection{
+	display: flex;
+	flex-direction: column;
+	height: 80px;
+}
+
+#userBox{
+	height: 20px;
+	width: 200px;
+	margin-left: 5px;
+	margin-bottom: 5px;
+	border-radius: 5px;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+	font-size: 18px;
+
+
+}
+
+#passBox{
+	height: 20px;
+	width: 200px;
+	margin-left: 5px;
+	margin-bottom: 5px;
+	border-radius: 5px;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+	font-size: 18px;
+
+
+}
+
+#confirmBox{
+	height: 20px;
+	width: 200px;
+	margin-left: 5px;
+	border-radius: 5px;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+	font-size: 18px;
+
+
+}
+
+/* LOGIN REGISTER */
+
+#login{
+	width: 250px;
+	height: 25px;
+	margin: 5px;
+	border-radius: 5px;
+
+}
+
+#goToRegister{
+	width: 250px;
+	height: 25px;
+	margin: 5px;
+	border-radius: 5px;
+
+}
+
+#register{
+	width: 250px;
+	height: 25px;
+	margin-top: 35px;
+	border-radius: 5px;
+
+}

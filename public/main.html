@@ -5,50 +5,20 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
 <link rel="stylesheet" type="text/css" href="main.css">
+<link rel="stylesheet" type="text/css" href="screen.css">
+
 </head>
 
 <body onload="loadStats()">
 
-
 <main>
-<div id="query">
+<div id="mainPage">
 
 <h2 id="loginTitle">HerosLeague</h2>
 
-<div id="userInfo">
+<div id="displayPage">
 
-<div class="stat">
-<text>Player: </text>
-<text id="userVal">stuff</text>
-</div>
-
-<div class="stat">
-<text>Gold: </text>
-<text id="goldVal">stuff</text>
-</div>
-
-<div class="stat">
-<text>Level: </text>
-<text id="levelVal">stuff</text>
-</div>
-
-<div class="stat">
-<text>Class: </text>
-<text id="classVal">stuff</text>
-</div>
-
-<p>Equipment:</p>
-
-<div class="stat">
-<text>Armor: </text>
-<text id="armorVal">stuff</text>
-</div>
-
-<div class="stat">
-<text>Weapon: </text>
-<text id="weaponVal">stuff</text>
-</div>
-
+<div id="stats">
 
 <p>Stats:</p>
 
@@ -72,17 +42,55 @@
 <text id="defenseVal">stuff</text>
 </div>
 
+</div>
+
+<div id="userInfo">
+
+<p>Player:</p>
+<div class="stat">
+<text id="userVal">stuff</text>
+</div>
+
+<div class="stat">
+<text>Level: </text>
+<text id="levelVal">stuff</text>
+</div>
+
+<div class="stat">
+<text>Gold: </text>
+<text id="goldVal">stuff</text>
+</div>
+
+<div class="stat">
+<text>Class: </text>
+<text id="classVal">stuff</text>
+</div>
+
+</div>
+
+<div id="equipment">
+<p>Equipment:</p>
+
+<div class="stat">
+<text>Armor: </text>
+<text id="armorVal">stuff</text>
+</div>
+
+<div class="stat">
+<text>Weapon: </text>
+<text id="weaponVal">stuff</text>
+</div>
+
+</div>
 
 <p></p>
 
 
-<button onclick="inventory()">View Inventory</button>
-<button onclick="shop()">Visit Shop</button>
-<button onclick="fight()">Fight Monsters</button>
-
-
 </div>
 
+<button id="inventoryButton" onclick="inventory()">View Inventory</button>
+<button id="shopButton" onclick="shop()">Visit Shop</button>
+<button id="fightButton" onclick="fight()">Fight Monsters</button>
 
 </div>
 

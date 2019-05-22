@@ -5,26 +5,36 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
 <link rel="stylesheet" type="text/css" href="login.css">
+<link rel="stylesheet" type="text/css" href="screen.css">
+
 </head>
 
-<body onLoad="hidePass()">
+<body>
 
 
 <main>
-<div id="query">
+
+<div id="mainPage">
 
 <h2 id="loginTitle">HerosLeague</h2>
 
-<div id="userPass">
+<div id="loginSection">
 
-<text>Username</text>
-<input id="user"> 
-<text>Password</text>
-<input type="password" id="pass"> 
-<button onclick="login()">Login</button>
-<button onclick="goToRegister()">Register</button>
+<div id="textSection">
+<text id="userText">Username:</text>
+<text id="passText">Password:</text>
+</div>
+
+<div id="inputSection">
+<input id="userBox"> 
+<input type="password" id="passBox"> 
+</div>
 
 </div>
+
+<button id="login" onclick="login()">Login</button>
+<button id="goToRegister" onclick="goToRegister()">Register</button>
+
 
 
 </div>

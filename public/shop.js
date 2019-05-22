@@ -21,6 +21,8 @@ function inInventory(item, vals){
 
 function loadShop(){
 
+	save();
+
 	vals = JSON.parse(localStorage.getItem('userData'));
 
 	var slotName = "slotName";
@@ -105,5 +107,135 @@ function buy4(){
 		window.location.href = "/shop.html";
 		alert("Purchased Knight Sword");
 	}
+}
+
+function slotSell1(){
+	var temp = vals.inventory[0];
+	for (i = 1; i <= shopCount; i++){
+		if (temp.tag == document.getElementById("shopItem" + i.toString()).innerHTML)
+			vals.gold = vals.gold + parseInt(document.getElementById("shopItemVal" + i.toString()).innerHTML);
+	}
+
+	vals.inventory.splice(0, 1);
+	localStorage.setItem('userData', JSON.stringify(vals));
+	window.location.href = "/shop.html";
+
+}
+
+function slotSell2(){
+	var temp = vals.inventory[1];
+	for (i = 1; i <= shopCount; i++){
+		if (temp.tag == document.getElementById("shopItem" + i.toString()).innerHTML)
+			vals.gold = vals.gold + parseInt(document.getElementById("shopItemVal" + i.toString()).innerHTML);
+	}
+
+	vals.inventory.splice(1, 1);
+	localStorage.setItem('userData', JSON.stringify(vals));
+	window.location.href = "/shop.html";
+
+}
+
+function slotSell3(){
+	var temp = vals.inventory[2];
+	for (i = 1; i <= shopCount; i++){
+		if (temp.tag == document.getElementById("shopItem" + i.toString()).innerHTML)
+			vals.gold = vals.gold + parseInt(document.getElementById("shopItemVal" + i.toString()).innerHTML);
+	}
+
+	vals.inventory.splice(2, 1);
+	localStorage.setItem('userData', JSON.stringify(vals));
+	window.location.href = "/shop.html";
+
+}
+
+function slotSell4(){
+	var temp = vals.inventory[3];
+	for (i = 1; i <= shopCount; i++){
+		if (temp.tag == document.getElementById("shopItem" + i.toString()).innerHTML)
+			vals.gold = vals.gold + parseInt(document.getElementById("shopItemVal" + i.toString()).innerHTML);
+	}
+
+	vals.inventory.splice(3, 1);
+	localStorage.setItem('userData', JSON.stringify(vals));
+	window.location.href = "/shop.html";
+
+}
+
+function slotSell5(){
+	var temp = vals.inventory[4];
+	for (i = 1; i <= shopCount; i++){
+		if (temp.tag == document.getElementById("shopItem" + i.toString()).innerHTML)
+			vals.gold = vals.gold + parseInt(document.getElementById("shopItemVal" + i.toString()).innerHTML);
+	}
+
+	vals.inventory.splice(4, 1);
+	localStorage.setItem('userData', JSON.stringify(vals));
+	window.location.href = "/shop.html";
+
+}
+
+function slotSell6(){
+	var temp = vals.inventory[5];
+	for (i = 1; i <= shopCount; i++){
+		if (temp.tag == document.getElementById("shopItem" + i.toString()).innerHTML)
+			vals.gold = vals.gold + parseInt(document.getElementById("shopItemVal" + i.toString()).innerHTML);
+	}
+
+	vals.inventory.splice(5, 1);
+	localStorage.setItem('userData', JSON.stringify(vals));
+	window.location.href = "/shop.html";
+
+}
+
+function slotSell7(){
+	var temp = vals.inventory[6];
+	for (i = 1; i <= shopCount; i++){
+		if (temp.tag == document.getElementById("shopItem" + i.toString()).innerHTML)
+			vals.gold = vals.gold + parseInt(document.getElementById("shopItemVal" + i.toString()).innerHTML);
+	}
+
+	vals.inventory.splice(6, 1);
+	localStorage.setItem('userData', JSON.stringify(vals));
+	window.location.href = "/shop.html";
+
+}
+
+function slotSell8(){
+	var temp = vals.inventory[7];
+	for (i = 1; i <= shopCount; i++){
+		if (temp.tag == document.getElementById("shopItem" + i.toString()).innerHTML)
+			vals.gold = vals.gold + parseInt(document.getElementById("shopItemVal" + i.toString()).innerHTML);
+	}
+
+	vals.inventory.splice(7, 1);
+	localStorage.setItem('userData', JSON.stringify(vals));
+	window.location.href = "/shop.html";
+
+}
+
+function slotSell9(){
+	var temp = vals.inventory[8];
+	for (i = 1; i <= shopCount; i++){
+		if (temp.tag == document.getElementById("shopItem" + i.toString()).innerHTML)
+			vals.gold = vals.gold + parseInt(document.getElementById("shopItemVal" + i.toString()).innerHTML);
+	}
+
+	vals.inventory.splice(8, 1);
+	localStorage.setItem('userData', JSON.stringify(vals));
+	window.location.href = "/shop.html";
+
+}
+
+function slotSell10(){
+	var temp = vals.inventory[9];
+	for (i = 1; i <= shopCount; i++){
+		if (temp.tag == document.getElementById("shopItem" + i.toString()).innerHTML)
+			vals.gold = vals.gold + parseInt(document.getElementById("shopItemVal" + i.toString()).innerHTML);
+	}
+
+	vals.inventory.splice(9, 1);
+	localStorage.setItem('userData', JSON.stringify(vals));
+	window.location.href = "/shop.html";
+
 }
 

@@ -48,8 +48,8 @@ function loadStats(){
 // Called when the user clicks login
 function login() {
 
-	var user = document.getElementById("user").value;
-	var pass = document.getElementById("pass").value;
+	var user = document.getElementById("userBox").value;
+	var pass = document.getElementById("passBox").value;
 
 	
 	var url = "login=" + user + " " + pass;
@@ -72,8 +72,9 @@ function register() {
 
 	//alert("Registering");
 
-	var user = document.getElementById("user").value;
-	var pass = document.getElementById("pass").value;
+	var user = document.getElementById("userBox").value;
+	var pass = document.getElementById("passBox").value;
+	var confirm = document.getElementById("confirmBox").value;
 
 	// Registration security code
 
@@ -89,6 +90,11 @@ function register() {
 
 	if (pass.length < 6){
 		alert("Password must be at least 6 characters.");
+		return;
+	}
+
+	if (pass != confirm){
+		alert("Passwords don't match");
 		return;
 	}
 

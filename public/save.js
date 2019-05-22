@@ -1,5 +1,5 @@
 function saveResponse(){
-	alert(this.responseText);
+	//alert(this.responseText);
 }
 
 function save(){
