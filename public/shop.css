@@ -1,6 +1,8 @@
 #MainScreen{
 	display: flex;
 	flex-direction: row;
+	width:700px;
+	justify-content: space-between;
 }
 
 #Shop{
@@ -17,4 +19,28 @@
 .shopItem{
 	display: flex;
 	flex-direction: row;
+	justify-content: space-between;
+	width: 300px;
+}
+
+.inventorySlot{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	width: 300px;
+}
+
+#goldTitle{
+	font-size: 22px;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+#shopTitle{
+	font-size: 28px;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+#inventoryTitle{
+	font-size: 28px;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
 }

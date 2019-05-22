@@ -9,3 +9,7 @@ function shop(){
 function fight(){
 	window.location.href = "/fight.html";
 }
+
+function logout(){
+	window.location.href = "/login.html";
+}

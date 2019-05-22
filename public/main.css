@@ -52,3 +52,10 @@
 	margin: 5px;
 	border-radius: 5px;
 }
+
+#logoutButton{
+	width: 250px;
+	height: 25px;
+	margin-top: 50px;
+	border-radius: 5px;
+}

@@ -28,7 +28,7 @@ function loadShop(){
 	var slotName = "slotName";
 	currentGold = vals.gold;
 
-	document.getElementById("goldAmount").innerHTML = currentGold;
+	document.getElementById("goldTitle").innerHTML = "Gold: " + currentGold;
 
 	// FOR INVENTORY
 
