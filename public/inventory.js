@@ -1,6 +1,6 @@
 var vals = JSON.parse(localStorage.getItem('userData'));
-var emptyArmor = {"tag":"empty","myType":"armor"};
-var emptyWeapon = {"tag":"empty","myType":"weapon"};
+var emptyArmor = {"tag":"empty","myType":"armor","meleeBonus":0,"rangedBonus":0,"magicBonus":0,"defenseBonus":0};
+var emptyWeapon = {"tag":"empty","myType":"weapon","meleeBonus":0,"rangedBonus":0,"magicBonus":0,"defenseBonus":0};
 
 
 function loadInventory(){
@@ -307,4 +307,8 @@ function slot10Equip(){
 
 	localStorage.setItem('userData', JSON.stringify(vals));
 	window.location.href = "/inventory.html";
+}
+
+function back(){
+	window.location.href = "/main.html";
 }

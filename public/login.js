@@ -1,4 +1,4 @@
-var baseStats = {"player":"stuff","level":4,"gold":100,"melee":1,"ranged":1,"magic":1,"defense":1,"classType":"None","armor":{"tag":"empty","myType":"armor"},"weapon":{"tag":"empty","myType":"weapon"},"inventory":[{"tag":"Leather Armor","myType":"armor"},{"tag":"Wooden Dagger","myType":"weapon"}]};
+var baseStats = {"player":"stuff","level":4,"gold":100,"melee":1,"ranged":1,"magic":1,"defense":1,"classType":"None","armor":{"tag":"empty","myType":"armor", "meleeBonus":0,"rangedBonus":0,"magicBonus":0,"defenseBonus":0},"weapon":{"tag":"empty","myType":"weapon", "meleeBonus":0,"rangedBonus":0,"magicBonus":0,"defenseBonus":0},"inventory":[{"tag":"Leather Armor","myType":"armor", "meleeBonus":0,"rangedBonus":0,"magicBonus":0,"defenseBonus":2 },{"tag":"Wooden Dagger","myType":"weapon","meleeBonus":2,"rangedBonus":0,"magicBonus":0,"defenseBonus":0}]};
 
 
 var loadedStats = "";
@@ -34,10 +34,10 @@ function loadStats(){
 	document.getElementById("levelVal").innerHTML = vals.level;
 	document.getElementById("goldVal").innerHTML = vals.gold;
 
-	document.getElementById("meleeVal").innerHTML = vals.melee;
-	document.getElementById("rangedVal").innerHTML = vals.ranged;
-	document.getElementById("magicVal").innerHTML = vals.magic;
-	document.getElementById("defenseVal").innerHTML = vals.defense;
+	document.getElementById("meleeVal").innerHTML = vals.melee + vals.armor.meleeBonus + vals.weapon.meleeBonus;
+	document.getElementById("rangedVal").innerHTML = vals.ranged + vals.armor.rangedBonus + vals.weapon.rangedBonus;
+	document.getElementById("magicVal").innerHTML = vals.magic + vals.armor.magicBonus + vals.weapon.magicBonus;
+	document.getElementById("defenseVal").innerHTML = vals.defense + vals.armor.defenseBonus + vals.weapon.defenseBonus;
 
 	document.getElementById("classVal").innerHTML = vals.classType;
 	document.getElementById("armorVal").innerHTML = vals.armor.tag;

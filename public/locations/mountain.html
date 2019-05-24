@@ -4,11 +4,11 @@
 <title>HerosLeague</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
-<link rel="stylesheet" type="text/css" href="screen.css">
+<link rel="stylesheet" type="text/css" href="screenFight.css">
 
 </head>
 
-<body>
+<body onload="loadMonster()">
 
 
 <main>
@@ -16,9 +16,10 @@
 
 <h2 id="loginTitle">HerosLeague</h2>
 
-<button id="forest" onclick="forest()">Go to forest.</button>
-<button id="mountain" onclick="comingSoonMountain()">Go to mountains.</button>
-<button id="back" onclick="back()">Back</button>
+<text id="resultText">resultStuff</text>
+
+<button id="continue" onclick="continueToMain()">Continue</button>
+
 
 
 
@@ -32,7 +33,7 @@
 
 <!-- The Javascript for this page -->
 
-<script src="fight.js"></script>
+<script src="mountain.js"></script>
 
 
 

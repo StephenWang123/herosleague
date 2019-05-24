@@ -59,7 +59,7 @@ function buy1(){
 	}
 	else {
 		vals.gold = currentGold - document.getElementById("shopItemVal1").innerHTML;
-		vals.inventory.push({"tag":"Leather Armor","myType":"armor"});
+		vals.inventory.push({"tag":"Leather Armor","myType":"armor","meleeBonus":0,"rangedBonus":0,"magicBonus":0,"defenseBonus":2});
 		localStorage.setItem('userData', JSON.stringify(vals));
 		window.location.href = "/shop.html";
 		alert("Purchased Leather Armor");
@@ -73,7 +73,7 @@ function buy2(){
 	}
 	else {
 		vals.gold = currentGold - document.getElementById("shopItemVal2").innerHTML;
-		vals.inventory.push({"tag":"Wooden Dagger","myType":"weapon"});
+		vals.inventory.push({"tag":"Wooden Dagger","myType":"weapon","meleeBonus":2,"rangedBonus":0,"magicBonus":0,"defenseBonus":0});
 		localStorage.setItem('userData', JSON.stringify(vals));
 		window.location.href = "/shop.html";
 		alert("Purchased Wooden Dagger");
@@ -88,7 +88,7 @@ function buy3(){
 	}
 	else {
 		vals.gold = currentGold - document.getElementById("shopItemVal3").innerHTML;
-		vals.inventory.push({"tag":"Knight Armor","myType":"armor"});
+		vals.inventory.push({"tag":"Knight Armor","myType":"armor", "meleeBonus":0,"rangedBonus":0,"magicBonus":0,"defenseBonus":3});
 		localStorage.setItem('userData', JSON.stringify(vals));
 		window.location.href = "/shop.html";
 		alert("Purchased Knight Armor");
@@ -102,7 +102,7 @@ function buy4(){
 	}
 	else {
 		vals.gold = currentGold - document.getElementById("shopItemVal4").innerHTML;
-		vals.inventory.push({"tag":"Knight Sword","myType":"weapon"});
+		vals.inventory.push({"tag":"Knight Sword","myType":"weapon", "meleeBonus":3,"rangedBonus":0,"magicBonus":0,"defenseBonus":0});
 		localStorage.setItem('userData', JSON.stringify(vals));
 		window.location.href = "/shop.html";
 		alert("Purchased Knight Sword");
@@ -237,5 +237,9 @@ function slotSell10(){
 	localStorage.setItem('userData', JSON.stringify(vals));
 	window.location.href = "/shop.html";
 
+}
+
+function back(){
+	window.location.href = "/main.html";
 }
 

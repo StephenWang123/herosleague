@@ -44,3 +44,11 @@
 	font-size: 28px;
 	font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
+
+#back{
+	width: 250px;
+	height: 25px;
+	margin-top: 25px;
+	border-radius: 5px;
+
+}
