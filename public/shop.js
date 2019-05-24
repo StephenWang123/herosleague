@@ -109,6 +109,62 @@ function buy4(){
 	}
 }
 
+function buy5(){
+	if (document.getElementById("shopItemVal5").innerHTML > currentGold){
+		alert("Need " + document.getElementById("shopItemVal5").innerHTML + " gold to purchase " + document.getElementById("shopItem5").innerHTML);
+		return;
+	}
+	else {
+		vals.gold = currentGold - document.getElementById("shopItemVal5").innerHTML;
+		vals.inventory.push({"tag":"Wizard Robe","myType":"armor", "meleeBonus":0,"rangedBonus":0,"magicBonus":2,"defenseBonus":2});
+		localStorage.setItem('userData', JSON.stringify(vals));
+		window.location.href = "/shop.html";
+		alert("Purchased Wizard Robe");
+	}
+}
+
+function buy6(){
+	if (document.getElementById("shopItemVal6").innerHTML > currentGold){
+		alert("Need " + document.getElementById("shopItemVal6").innerHTML + " gold to purchase " + document.getElementById("shopItem6").innerHTML);
+		return;
+	}
+	else {
+		vals.gold = currentGold - document.getElementById("shopItemVal6").innerHTML;
+		vals.inventory.push({"tag":"Wizard Staff","myType":"weapon", "meleeBonus":0,"rangedBonus":0,"magicBonus":4,"defenseBonus":0});
+		localStorage.setItem('userData', JSON.stringify(vals));
+		window.location.href = "/shop.html";
+		alert("Purchased Wizard Staff");
+	}
+}
+
+function buy7(){
+	if (document.getElementById("shopItemVal7").innerHTML > currentGold){
+		alert("Need " + document.getElementById("shopItemVal7").innerHTML + " gold to purchase " + document.getElementById("shopItem7").innerHTML);
+		return;
+	}
+	else {
+		vals.gold = currentGold - document.getElementById("shopItemVal7").innerHTML;
+		vals.inventory.push({"tag":"Ninja Garment","myType":"armor", "meleeBonus":3,"rangedBonus":3,"magicBonus":3,"defenseBonus":2});
+		localStorage.setItem('userData', JSON.stringify(vals));
+		window.location.href = "/shop.html";
+		alert("Purchased Ninja Garment");
+	}
+}
+
+function buy8(){
+	if (document.getElementById("shopItemVal8").innerHTML > currentGold){
+		alert("Need " + document.getElementById("shopItemVal8").innerHTML + " gold to purchase " + document.getElementById("shopItem8").innerHTML);
+		return;
+	}
+	else {
+		vals.gold = currentGold - document.getElementById("shopItemVal8").innerHTML;
+		vals.inventory.push({"tag":"Throwing Stars","myType":"weapon", "meleeBonus":0,"rangedBonus":5,"magicBonus":0,"defenseBonus":0});
+		localStorage.setItem('userData', JSON.stringify(vals));
+		window.location.href = "/shop.html";
+		alert("Purchased Throwing Stars");
+	}
+}
+
 function slotSell1(){
 	var temp = vals.inventory[0];
 	for (i = 1; i <= shopCount; i++){

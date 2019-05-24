@@ -5,7 +5,7 @@
 var Boar = {"monster":"Boar","level":2, "melee":1,"ranged":1,"magic":1,"defense":1, "armor":{"tag":"empty","myType":"armor"},"weapon":{"tag":"empty","myType":"weapon"},"gold":5};
 var Wolf = {"monster":"Wolf","level":2, "melee":2,"ranged":1,"magic":1,"defense":1, "armor":{"tag":"empty","myType":"armor"},"weapon":{"tag":"empty","myType":"weapon"},"gold":8};
 var Bear = {"monster":"Bear","level":3, "melee":2,"ranged":1,"magic":1,"defense":2, "armor":{"tag":"empty","myType":"armor"},"weapon":{"tag":"empty","myType":"weapon"}, "gold":10};
-var Goblin = {"monster":"Goblin","level":4, "melee":3,"ranged":1,"magic":1,"defense":3, "armor":{"tag":"Leather Armor","myType":"armor"},"weapon":{"tag":"Wooden Dagger","myType":"weapon"}, "gold:":20};
+var Goblin = {"monster":"Goblin","level":4, "melee":3,"ranged":1,"magic":1,"defense":3, "armor":{"tag":"Leather Armor","myType":"armor"},"weapon":{"tag":"Wooden Dagger","myType":"weapon"}, "gold":20};
 
 
 function loadMonster(){
