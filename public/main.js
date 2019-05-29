@@ -13,3 +13,7 @@ function fight(){
 function logout(){
 	window.location.href = "/login.html";
 }
+
+function farm(){
+	window.location.href = "/farm.html";
+}

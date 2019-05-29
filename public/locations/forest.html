@@ -5,6 +5,7 @@ v<!doctype HTML>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
 <link rel="stylesheet" type="text/css" href="screenFight.css">
+<link rel="stylesheet" type="text/css" href="forest.css">
 
 </head>
 
@@ -18,8 +19,44 @@ v<!doctype HTML>
 
 <text id="resultText">resultStuff</text>
 
-<button id="continue" onclick="continueToMain()">Continue</button>
+<div id="monsterDiv">
+	<text id="monsterName">monsterStuff</text>
+	<text id="monsterLevel">monsterStuffLevel</text>
+	<div id="monsterInfo">
+		<div id="monsterStats">
+			<div class="stat">
+				<text> Melee: </text>
+				<text id='mMelee'> stuff </text>
+			</div>
+			<div class="stat">
+				<text> Ranged: </text>
+				<text id='mRanged'> stuff </text>
+			</div>
+			<div class="stat">
+				<text> Magic: </text>
+				<text id='mMagic'> stuff </text>
+			</div>
+			<div class="stat">
+				<text> Defense: </text>
+				<text id='mDefense'> stuff </text>
+			</div>
+		</div>
 
+		<div id="monsterEquipment">
+			<div class="stat">
+				<text> Armor: </text>
+				<text id='mArmor'> stuff </text>
+			</div>
+			<div class="stat">
+				<text> Weapon: </text>
+				<text id='mWeapon'> stuff </text>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<button id="continue" onclick="continueToMain()">Continue</button>
 
 </div>
 

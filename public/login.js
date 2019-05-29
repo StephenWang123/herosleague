@@ -1,5 +1,5 @@
-var baseStats = {"player":"stuff","level":4,"gold":100,"melee":1,"ranged":1,"magic":1,"defense":1,"classType":"None","armor":{"tag":"empty","myType":"armor", "meleeBonus":0,"rangedBonus":0,"magicBonus":0,"defenseBonus":0},"weapon":{"tag":"empty","myType":"weapon", "meleeBonus":0,"rangedBonus":0,"magicBonus":0,"defenseBonus":0},"inventory":[{"tag":"Leather Armor","myType":"armor", "meleeBonus":0,"rangedBonus":0,"magicBonus":0,"defenseBonus":2 },{"tag":"Wooden Dagger","myType":"weapon","meleeBonus":2,"rangedBonus":0,"magicBonus":0,"defenseBonus":0}]};
-
+var baseStats = {"player":"stuff","level":1,"exp":0,"gold":100,"melee":1,"ranged":1,"magic":1,"defense":1,"classType":"None","armor":{"tag":"empty","myType":"armor", "meleeBonus":0,"rangedBonus":0,"magicBonus":0,"defenseBonus":0},"weapon":{"tag":"empty","myType":"weapon", "meleeBonus":0,"rangedBonus":0,"magicBonus":0,"defenseBonus":0},"inventory":[{"tag":"Leather Armor","myType":"armor", "meleeBonus":0,"rangedBonus":0,"magicBonus":0,"defenseBonus":2 },{"tag":"Wooden Dagger","myType":"weapon","meleeBonus":2,"rangedBonus":0,"magicBonus":0,"defenseBonus":0}]};
+var levels = [0,64,125,216,343,512,729,1000,1331,1728,2197,2744,3375,4096,4913,5832,6859,8000,9261,10648,12167,13824,15625];
 
 var loadedStats = "";
 // Level;Gold;Melee;Ranged;Magic;Defense;Class;EquipArmor;EquipWeapon;Inventory;
@@ -32,6 +32,9 @@ function loadStats(){
 	var vals = JSON.parse(localStorage.getItem('userData'));
 	document.getElementById("userVal").innerHTML = vals.player;
 	document.getElementById("levelVal").innerHTML = vals.level;
+	document.getElementById("expVal").innerHTML =  " (" + vals.exp.toString() + "/" + levels[vals.level].toString() + ")";
+	document.getElementById("expBar").value = vals.exp;
+	document.getElementById("expBar").max = levels[vals.level];
 	document.getElementById("goldVal").innerHTML = vals.gold;
 
 	document.getElementById("meleeVal").innerHTML = vals.melee + vals.armor.meleeBonus + vals.weapon.meleeBonus;

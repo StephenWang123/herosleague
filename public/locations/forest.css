@@ -1,0 +1,38 @@
+#monsterDiv{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 25px;
+}
+
+#monsterName{
+	font-size: 24px;
+}
+
+#monsterLevel{
+	font-size: 20px;
+}
+
+#monsterInfo{
+	display: flex;
+	flex-direction: row;
+	padding: 5px;
+}
+
+#monsterStats{
+	display: flex;
+	flex-direction: column;
+	padding: 25px;
+}
+
+
+#monsterEquipment{
+	display: flex;
+	flex-direction: column;
+	padding: 25px;
+}
+
+.stat{
+	display: flex;
+	flex-direction: row;
+}
