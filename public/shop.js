@@ -1,4 +1,4 @@
-var shopCount = 4;
+var shopCount = 8;
 var currentGold = 0;
 var vals;
 
@@ -57,15 +57,20 @@ function buy1(){
 		alert("Need " + document.getElementById("shopItemVal1").innerHTML + " gold to purchase " + document.getElementById("shopItem1").innerHTML);
 		return;
 	}
-	else {
-		if (confirm("Confirm purchase of '" + document.getElementById("shopItem1").innerHTML + "'?")){
+
+	if (vals.inventory.length >= 10){
+		alert("Inventory full.");
+		return;
+	}
+	
+	if (confirm("Confirm purchase of '" + document.getElementById("shopItem1").innerHTML + "'?")){
 			vals.gold = currentGold - document.getElementById("shopItemVal1").innerHTML;
 			vals.inventory.push({"tag":"Leather Armor","myType":"armor","meleeBonus":0,"rangedBonus":0,"magicBonus":0,"defenseBonus":2});
 			localStorage.setItem('userData', JSON.stringify(vals));
 			window.location.href = "/shop.html";
 			alert("Purchased Leather Armor");
-		}
 	}
+	
 }
 
 function buy2(){
@@ -73,15 +78,21 @@ function buy2(){
 		alert("Need " + document.getElementById("shopItemVal2").innerHTML + " gold to purchase " + document.getElementById("shopItem2").innerHTML);
 		return;
 	}
-	else {
-		if (confirm("Confirm purchase of '" + document.getElementById("shopItem2").innerHTML + "'?")){
+
+	if (vals.inventory.length >= 10){
+		alert("Inventory full.");
+		return;
+	}
+
+	
+	if (confirm("Confirm purchase of '" + document.getElementById("shopItem2").innerHTML + "'?")){
 			vals.gold = currentGold - document.getElementById("shopItemVal2").innerHTML;
 			vals.inventory.push({"tag":"Wooden Dagger","myType":"weapon","meleeBonus":2,"rangedBonus":0,"magicBonus":0,"defenseBonus":0});
 			localStorage.setItem('userData', JSON.stringify(vals));
 			window.location.href = "/shop.html";
 			alert("Purchased Wooden Dagger");
-		}
 	}
+	
 
 }
 
@@ -90,15 +101,20 @@ function buy3(){
 		alert("Need " + document.getElementById("shopItemVal3").innerHTML + " gold to purchase " + document.getElementById("shopItem3").innerHTML + " You have: " + currentGold);
 		return;
 	}
-	else {
-		if (confirm("Confirm purchase of '" + document.getElementById("shopItem3").innerHTML + "'?")){
+
+	if (vals.inventory.length >= 10){
+		alert("Inventory full.");
+		return;
+	}
+	
+	if (confirm("Confirm purchase of '" + document.getElementById("shopItem3").innerHTML + "'?")){
 			vals.gold = currentGold - document.getElementById("shopItemVal3").innerHTML;
 			vals.inventory.push({"tag":"Knight Armor","myType":"armor", "meleeBonus":0,"rangedBonus":0,"magicBonus":0,"defenseBonus":3});
 			localStorage.setItem('userData', JSON.stringify(vals));
 			window.location.href = "/shop.html";
 			alert("Purchased Knight Armor");
-		}
 	}
+	
 }
 
 function buy4(){
@@ -106,15 +122,21 @@ function buy4(){
 		alert("Need " + document.getElementById("shopItemVal4").innerHTML + " gold to purchase " + document.getElementById("shopItem4").innerHTML);
 		return;
 	}
-	else {
-		if (confirm("Confirm purchase of '" + document.getElementById("shopItem4").innerHTML + "'?")){
+
+	if (vals.inventory.length >= 10){
+		alert("Inventory full.");
+		return;
+	}
+
+	
+	if (confirm("Confirm purchase of '" + document.getElementById("shopItem4").innerHTML + "'?")){
 			vals.gold = currentGold - document.getElementById("shopItemVal4").innerHTML;
 			vals.inventory.push({"tag":"Knight Sword","myType":"weapon", "meleeBonus":3,"rangedBonus":0,"magicBonus":0,"defenseBonus":0});
 			localStorage.setItem('userData', JSON.stringify(vals));
 			window.location.href = "/shop.html";
 			alert("Purchased Knight Sword");
-		}
 	}
+	
 }
 
 function buy5(){
@@ -122,15 +144,20 @@ function buy5(){
 		alert("Need " + document.getElementById("shopItemVal5").innerHTML + " gold to purchase " + document.getElementById("shopItem5").innerHTML);
 		return;
 	}
-	else {
-		if (confirm("Confirm purchase of '" + document.getElementById("shopItem5").innerHTML + "'?")){
+
+	if (vals.inventory.length >= 10){
+		alert("Inventory full.");
+		return;
+	}
+	
+	if (confirm("Confirm purchase of '" + document.getElementById("shopItem5").innerHTML + "'?")){
 			vals.gold = currentGold - document.getElementById("shopItemVal5").innerHTML;
 			vals.inventory.push({"tag":"Wizard Robe","myType":"armor", "meleeBonus":0,"rangedBonus":0,"magicBonus":2,"defenseBonus":2});
 			localStorage.setItem('userData', JSON.stringify(vals));
 			window.location.href = "/shop.html";
 			alert("Purchased Wizard Robe");
-		}
 	}
+	
 }
 
 function buy6(){
@@ -138,15 +165,20 @@ function buy6(){
 		alert("Need " + document.getElementById("shopItemVal6").innerHTML + " gold to purchase " + document.getElementById("shopItem6").innerHTML);
 		return;
 	}
-	else {
-		if (confirm("Confirm purchase of '" + document.getElementById("shopItem6").innerHTML + "'?")){
+
+	if (vals.inventory.length >= 10){
+		alert("Inventory full.");
+		return;
+	}
+	
+	if (confirm("Confirm purchase of '" + document.getElementById("shopItem6").innerHTML + "'?")){
 			vals.gold = currentGold - document.getElementById("shopItemVal6").innerHTML;
 			vals.inventory.push({"tag":"Wizard Staff","myType":"weapon", "meleeBonus":0,"rangedBonus":0,"magicBonus":4,"defenseBonus":0});
 			localStorage.setItem('userData', JSON.stringify(vals));
 			window.location.href = "/shop.html";
 			alert("Purchased Wizard Staff");
-		}
 	}
+	
 }
 
 function buy7(){
@@ -154,15 +186,21 @@ function buy7(){
 		alert("Need " + document.getElementById("shopItemVal7").innerHTML + " gold to purchase " + document.getElementById("shopItem7").innerHTML);
 		return;
 	}
-	else {
-		if (confirm("Confirm purchase of '" + document.getElementById("shopItem7").innerHTML + "'?")){
+
+	if (vals.inventory.length >= 10){
+		alert("Inventory full.");
+		return;
+	}
+
+	
+	if (confirm("Confirm purchase of '" + document.getElementById("shopItem7").innerHTML + "'?")){
 			vals.gold = currentGold - document.getElementById("shopItemVal7").innerHTML;
 			vals.inventory.push({"tag":"Ninja Garment","myType":"armor", "meleeBonus":3,"rangedBonus":3,"magicBonus":3,"defenseBonus":2});
 			localStorage.setItem('userData', JSON.stringify(vals));
 			window.location.href = "/shop.html";
 			alert("Purchased Ninja Garment");
-		}
 	}
+	
 }
 
 function buy8(){
@@ -170,15 +208,20 @@ function buy8(){
 		alert("Need " + document.getElementById("shopItemVal8").innerHTML + " gold to purchase " + document.getElementById("shopItem8").innerHTML);
 		return;
 	}
-	else {
-		if (confirm("Confirm purchase of '" + document.getElementById("shopItem8").innerHTML + "'?")){
+
+	if (vals.inventory.length >= 10){
+		alert("Inventory full.");
+		return;
+	}
+	
+	if (confirm("Confirm purchase of '" + document.getElementById("shopItem8").innerHTML + "'?")){
 			vals.gold = currentGold - document.getElementById("shopItemVal8").innerHTML;
 			vals.inventory.push({"tag":"Throwing Stars","myType":"weapon", "meleeBonus":0,"rangedBonus":5,"magicBonus":0,"defenseBonus":0});
 			localStorage.setItem('userData', JSON.stringify(vals));
 			window.location.href = "/shop.html";
 			alert("Purchased Throwing Stars");
-		}
 	}
+	
 }
 
 function slotSell1(){
