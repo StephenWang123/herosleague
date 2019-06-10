@@ -4,10 +4,32 @@ var levels = [0,64,125,216,343,512,729,1000,1331,1728,2197,2744,3375,4096,4913,5
 var loadedStats = "";
 // Level;Gold;Melee;Ranged;Magic;Defense;Class;EquipArmor;EquipWeapon;Inventory;
 
+function getNumUsers(){
+
+	var url = "getNum=";
+
+	var oReq = new XMLHttpRequest();
+
+    oReq.open("GET", url);
+
+    // setup callback
+    oReq.addEventListener("load", getNumResponse);
+
+    // load event occurs when response comes back
+    oReq.send();
+}
+
 function goToRegister(){
 	window.location.href = "/register.html";
 }
 
+function getNumResponse(){
+	var text = "Number of players: ";
+
+	text = text + this.responseText;
+
+	document.getElementById("numPlayers").innerHTML = text;
+}
 
 function registerResponse () {
 	alert(this.responseText);

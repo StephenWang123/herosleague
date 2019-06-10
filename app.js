@@ -12,8 +12,6 @@ var db = new sqlite3.Database(dbFileName);
 
 function callback(user, pass){
 
-
-
 }
 
 /*
@@ -111,8 +109,19 @@ function handler(request, response) {
 			response.write("Saved progress.");
 			response.end();
 
+		}
 
+		else if (url.substring(0, 7) == "getNum=") { // get number of users
+			response.writeHead(200, {"Content-Type": "text/html"});
 
+			//cmd = "SELECT COUNT(*) FROM userPass";
+			cmd = "SELECT * FROM userPass";
+
+			db.all(cmd, function(err, rows){
+				response.write(rows.length.toString());
+				response.end();
+			});
+			
 
 		}
 
