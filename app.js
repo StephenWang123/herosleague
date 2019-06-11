@@ -21,6 +21,8 @@ const db = new Client({
 
 db.connect();
 
+db.query('DROP TABLE userPass;', (err, res) => {});
+
 db.query('CREATE TABLE userPass (username TEXT, password TEXT, stats TEXT);', (err, res) => {});
 
 /*
