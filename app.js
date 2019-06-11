@@ -21,12 +21,7 @@ const db = new Client({
 
 db.connect();
 
-db.query('SELECT * FROM userPass;', (err, res) => {
-  if (err) throw err;
-  for (let row of res.rows) {
-    console.log(JSON.stringify(row));
-  }
-});
+db.query('CREATE TABLE userPass (username varchar(255), password varchar(255), stats varchar(255));', (err, res) => {});
 
 /*
  *  This is our server's function handler. The request obj
