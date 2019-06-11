@@ -40,7 +40,7 @@ function registerResponse () {
 
 function loginResponse () {
 	loadedStats = decodeURIComponent(this.responseText);
-	alert(loadedStats);
+	//alert(loadedStats);
 	if (loadedStats != "Invalid username/password combination"){
 		localStorage.setItem('userData', loadedStats);
 		window.location.href = "/main.html";

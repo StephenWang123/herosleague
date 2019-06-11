@@ -21,9 +21,8 @@ const db = new Client({
 
 db.connect();
 
-db.query('DROP TABLE userPass;', (err, res) => {});
-
-db.query('CREATE TABLE userPass (username TEXT, password TEXT, stats TEXT);', (err, res) => {});
+//db.query('DROP TABLE userPass;', (err, res) => {}); REMOVES DATABASE
+//db.query('CREATE TABLE userPass (username TEXT, password TEXT, stats TEXT);', (err, res) => {});
 
 /*
  *  This is our server's function handler. The request obj
