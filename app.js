@@ -21,7 +21,7 @@ const db = new Client({
 
 db.connect();
 
-db.query('CREATE TABLE userPass (username varchar(255), password varchar(255), stats varchar(255));', (err, res) => {});
+db.query('CREATE TABLE userPass (username TEXT, password TEXT, stats TEXT);', (err, res) => {});
 
 /*
  *  This is our server's function handler. The request obj
