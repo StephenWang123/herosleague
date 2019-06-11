@@ -22,7 +22,7 @@ const db = new Client({
 db.connect();
 
 //db.query('DROP TABLE userPass;', (err, res) => {}); REMOVES DATABASE
-//db.query('CREATE TABLE userPass (username TEXT, password TEXT, stats TEXT);', (err, res) => {});
+//db.query('CREATE TABLE userPass (username TEXT, password TEXT, stats TEXT);', (err, res) => {}); CREATES DATABASE
 
 /*
  *  This is our server's function handler. The request obj
@@ -50,7 +50,7 @@ function handler(request, response) {
 			console.log("PASS: " + pass);
 			
 			db.query("SELECT * FROM userPass WHERE username = '" + usr + "' AND password = '" + pass + "'", function (err, res) {
-
+				console.log(res.rows.length);
 				if (res.rows.length == 0) { // Username/password combination doesn't exist in database
 					response.write("Invalid username/password combination");
 					response.end();

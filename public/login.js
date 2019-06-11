@@ -45,6 +45,9 @@ function loginResponse () {
 		localStorage.setItem('userData', loadedStats);
 		window.location.href = "/main.html";
 	}
+	else {
+		alert(loadedStats);
+	}
 } 
 
 function loadStats(){
