@@ -8,11 +8,25 @@ var ip = require('ip');
 
 // Globals
 var dbFileName = "users.db"; 
-var db = new sqlite3.Database(dbFileName); 
+//var db = new sqlite3.Database(dbFileName); 
 
-function callback(user, pass){
+const { Client } = require('pg');
 
-}
+let connString = process.env.DATABASE_URL;
+
+const db = new Client({
+  connectionString: connString,
+ // ssl: true,
+});
+
+db.connect();
+
+db.query('SELECT * FROM userPass;', (err, res) => {
+  if (err) throw err;
+  for (let row of res.rows) {
+    console.log(JSON.stringify(row));
+  }
+});
 
 /*
  *  This is our server's function handler. The request obj
@@ -39,15 +53,15 @@ function handler(request, response) {
 			console.log("USER: " + usr);
 			console.log("PASS: " + pass);
 			
-			db.get("SELECT * FROM userPass WHERE username = '" + usr + "' AND password = '" + pass + "'", function (err, row) {
+			db.query("SELECT * FROM userPass WHERE username = '" + usr + "' AND password = '" + pass + "'", function (err, res) {
 
-				if (row == undefined) { // Username/password combination doesn't exist in database
+				if (res.rows.length == 0) { // Username/password combination doesn't exist in database
 					response.write("Invalid username/password combination");
 					response.end();
 				}
 				else {
 					console.log("Login info correct:");
-					response.write(row.stats);
+					response.write(res.rows[0].stats);
 					response.end();
 				}
 
@@ -70,18 +84,20 @@ function handler(request, response) {
 			usr = usrAndPass[0];
 			pass = usrAndPass[1];
 			stats = usrAndPass[2];
-			console.log("USER: " + usr);
-			console.log("PASS: " + pass);
-			console.log("BASESTATS: " + stats);
+			//console.log("USER: " + usr);
+			//console.log("PASS: " + pass);
+			//console.log("BASESTATS: " + stats);
 			cmd = "INSERT INTO userPass (username, password, stats) VALUES ('" + usr + "','" + pass + "','" + stats +"')";
-			db.get("SELECT 1 FROM userPass WHERE username = '" + usr + "'", function (err, row) {
+			db.query("SELECT 1 FROM userPass WHERE username = '" + usr + "'", function (err, res) {
 
-				if (row != undefined) { // Username already exists in database
+
+
+				if (res.rows.length > 0) { // Username already exists in database
 					response.write("The username '" + usr + "' is already taken!");
 					response.end();
 				}
 				else {
-					db.run(cmd, errorCallback);
+					db.query(cmd, errorCallback);
 					response.write("Registration successful.");
 					response.end();
 				}
@@ -105,7 +121,7 @@ function handler(request, response) {
 			console.log("CURRENT STATS: " + usrAndVals[1]);
 			cmd = "UPDATE userPass SET stats = '" + usrAndVals[1] + "' WHERE username = '" + usrAndVals[0] + "'";
 
-			db.run(cmd, errorCallback);
+			db.query(cmd, errorCallback);
 			response.write("Saved progress.");
 			response.end();
 
@@ -115,18 +131,20 @@ function handler(request, response) {
 			response.writeHead(200, {"Content-Type": "text/html"});
 
 			//cmd = "SELECT COUNT(*) FROM userPass";
-			cmd = "SELECT * FROM userPass";
+			cmd = "SELECT * FROM userpass";
 
-			db.all(cmd, function(err, rows){
-				response.write(rows.length.toString());
+
+			db.query(cmd, function(err, res){
+				console.log(res);
+				response.write(res.rows.length.toString());
 				response.end();
 			});
+
 			
 
 		}
 
 		else {
-
 			
 	            file.serve(request, response, function (e, res) {
 	            if (e && (e.status === 404)) { // If the file wasn't found
